@@ -4,9 +4,10 @@
     <nav class="navbar navbar-expand-sm bg-light navbar-dark">
       <ul class="navbar-nav">
         <li lass="nav-item" *ngFor="let item of ProductList">
-          <button id="item.productCode" class="m-1 btn btn-light btn-outline-primary"
-            (click)="chooseProductClick(item)">
-            {{item.name}} ₱{{item.price}} {{item.quantity}}</button>
+          <button id="item.productCode" class="m-1 btn btn-light btn-outline-primary" [disabled]="item.qtyStock<=0"
+            (click)="chooseProductClick(item) ">
+            {{item.productCode}} {{item.name}} ₱{{item.price}} </button>
+          
         </li>
 
       </ul>
